@@ -11,7 +11,7 @@ import io.cb.java.inject.reflect.RedisTestReflect;
 
 /**
  *
- * @author FR20173
+ * @author Christophe Blettry (blech)
  */
 public class MainAllTests {
 

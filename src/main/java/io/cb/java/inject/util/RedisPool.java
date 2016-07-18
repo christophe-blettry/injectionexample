@@ -7,7 +7,7 @@ package io.cb.java.inject.util;
 
 /**
  *
- * @author FR20173
+ * @author Christophe Blettry (blech)
  */
 public class RedisPool {
 

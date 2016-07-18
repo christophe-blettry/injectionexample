@@ -11,7 +11,7 @@ import java.lang.reflect.Proxy;
 
 /**
  *
- * @author FR20173
+ * @author Christophe Blettry (blech)
  */
 public class RedisTestProxy {
 

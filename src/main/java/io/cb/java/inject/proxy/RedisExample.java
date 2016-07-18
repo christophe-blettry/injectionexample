@@ -9,7 +9,7 @@ import io.cb.java.inject.util.RedisConnection;
 
 /**
  *
- * @author FR20173
+ * @author Christophe Blettry (blech)
  */
 public class RedisExample implements RedisExampleInterface {
 

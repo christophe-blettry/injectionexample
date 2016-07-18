@@ -11,7 +11,7 @@ import java.lang.reflect.Method;
 
 /**
  *
- * @author FR20173
+ * @author Christophe Blettry (blech)
  */
 public class RedisExampleInvocationHandler implements InvocationHandler {
 

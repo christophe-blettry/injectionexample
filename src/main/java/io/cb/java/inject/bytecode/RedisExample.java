@@ -11,7 +11,7 @@ import io.cb.java.instrument.bean.Named;
 
 /**
  *
- * @author FR20173
+ * @author Christophe Blettry (blech)
  */
 public class RedisExample {
 
