@@ -17,10 +17,10 @@ public class RedisTestByteCode {
 
 	static {
 		Agent.initialize("--deBug");
+		Context.loadResource("test/beans.xml");
 	}
 
 	public RedisTestByteCode() {
-		Context.loadResource("test/beans.xml");
 		RedisExample redisExample = new RedisExample();
 		System.out.println(String.format(FORMAT, this.getClass().getName(), redisExample.getRedisConnection()));
 	}
