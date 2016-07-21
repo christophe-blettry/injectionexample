@@ -15,10 +15,16 @@ import java.lang.reflect.Method;
  */
 public class RedisExampleInvocationHandler implements InvocationHandler {
 
+	static {
+		Context.loadResource("test/beans.xml");
+	}
+	
 	@Override
 	public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-		Context.loadResource("test/beans.xml");
-		return Context.getResource("redisConnectionProxy");
+		if(method.getName().equals("getRedisConnection")){
+			return Context.getResource("redisConnectionProxy");
+		}
+		throw new UnsupportedOperationException();
 	}
 
 }
