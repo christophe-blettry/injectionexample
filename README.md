@@ -31,7 +31,7 @@ What will cause the interception of all calls to the interface methods. This imp
 
 *RedisExampleInvocationHandler*:
 
-
+```java
     @Override  
 	public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {  
 		if(method.getName().equals("getRedisConnection")){  
@@ -39,7 +39,7 @@ What will cause the interception of all calls to the interface methods. This imp
 		}  
 		throw new UnsupportedOperationException();  
 	}  
-
+````
 
 ###[Constructor](https://github.com/christophe-blettry/injectionexample/tree/master/src/main/java/io/cb/java/inject/bytecode)
 
@@ -50,8 +50,9 @@ We use @Inject and @Named annotation to retreive field that must be initialized 
 If we found @Inject annotation the class will be transformed.
 The bytecode of the class will be transformed by adding in all existing constructor the code of field initialization (see `Transformer` [class](https://github.com/christophe-blettry/injectiontest/blob/master/src/main/java/io/cb/java/instrument/Transformer.java)):
 
-
+```java
     String line = "this." + ctField.getName() + "= (" + ctField.getType().getName() + ")io.cb.java.instrument.bean.Context.getResource(\"" + name + "\");";
+```
 
 With this added line of code the class will be "recompile" and outputed by the method.
 From now on, it will be this new piece of byte code that will be used by the jvm.
