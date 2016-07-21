@@ -1,4 +1,4 @@
-#The Injectors : example
+#The Injectors : examples
 
 see the instrumentation before.
 
@@ -13,11 +13,11 @@ Each package contains one main file that can be executed.
 You need to add the java `tools.jar` in your classpath, or to your maven repository.
 
 
-- ####[Direct](https://github.com/christophe-blettry/injectionexample/tree/master/src/main/java/io/cb/java/inject/reflect)
+###[Direct](https://github.com/christophe-blettry/injectionexample/tree/master/src/main/java/io/cb/java/inject/reflect)
 
 In the package `io.cb.java.inject.reflect` we instantiate the `RedisConnection` object without making a `new` but using the reflection method see: `Context.getResource`
 
-- ####[Method](https://github.com/christophe-blettry/injectionexample/tree/master/src/main/java/io/cb/java/inject/proxy)
+###[Method](https://github.com/christophe-blettry/injectionexample/tree/master/src/main/java/io/cb/java/inject/proxy)
 
 In the package `io.cb.java.inject.proxy` the class `RedisExample` [\*](https://github.com/christophe-blettry/injectionexample/blob/master/src/main/java/io/cb/java/inject/proxy/RedisExample.java) implement `getRedisConnection` from `RedisExampleInterface` [\*](https://github.com/christophe-blettry/injectionexample/blob/master/src/main/java/io/cb/java/inject/proxy/RedisExampleInterface.java) .
 
@@ -41,7 +41,7 @@ What will cause the interception of all calls to the interface methods. This imp
 	}  
 
 
-- ###[Constructor](https://github.com/christophe-blettry/injectionexample/tree/master/src/main/java/io/cb/java/inject/bytecode)
+###[Constructor](https://github.com/christophe-blettry/injectionexample/tree/master/src/main/java/io/cb/java/inject/bytecode)
 
 In the package `io.cb.java.inject.bytecode` we instantiate the `RedisConnection` object by transforming the bytecode of the `RedisExample` class.
 
@@ -57,7 +57,7 @@ With this added line of code the class will be "recompile" and outputed by the m
 From now on, it will be this new piece of byte code that will be used by the jvm.
 
 
-- ###[Demo Output](https://github.com/christophe-blettry/injectionexample/blob/master/src/main/java/io/cb/java/inject/MainAllTests.java)
+###[Demo Output](https://github.com/christophe-blettry/injectionexample/blob/master/src/main/java/io/cb/java/inject/MainAllTests.java)
 
 
     By Reflection
