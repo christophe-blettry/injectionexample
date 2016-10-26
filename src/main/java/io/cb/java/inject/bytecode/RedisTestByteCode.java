@@ -6,8 +6,8 @@
 package io.cb.java.inject.bytecode;
 
 import static io.cb.java.inject.MainAllTests.FORMAT;
-import io.cb.java.instrument.Agent;
-import io.cb.java.instrument.bean.Context;
+import io.cb.java.injection.Agent;
+import io.cb.java.injection.pojo.Context;
 
 /**
  *
@@ -17,7 +17,7 @@ public class RedisTestByteCode {
 
 	static {
 		Agent.initialize("--deBug");
-		Context.loadResource("test/beans.xml");
+		Context.loadResource("test/context.xml");
 	}
 
 	public RedisTestByteCode() {

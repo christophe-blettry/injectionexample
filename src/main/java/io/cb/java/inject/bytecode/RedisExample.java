@@ -6,8 +6,8 @@
 package io.cb.java.inject.bytecode;
 
 import io.cb.java.inject.util.RedisConnection;
-import io.cb.java.instrument.bean.Inject;
-import io.cb.java.instrument.bean.Named;
+import io.cb.java.injection.pojo.Inject;
+import io.cb.java.injection.pojo.Named;
 
 /**
  *

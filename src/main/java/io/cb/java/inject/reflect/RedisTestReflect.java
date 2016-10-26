@@ -7,7 +7,7 @@ package io.cb.java.inject.reflect;
 
 import static io.cb.java.inject.MainAllTests.FORMAT;
 import io.cb.java.inject.util.RedisConnection;
-import io.cb.java.instrument.bean.Context;
+import io.cb.java.injection.pojo.Context;
 
 /**
  *
@@ -16,7 +16,7 @@ import io.cb.java.instrument.bean.Context;
 public class RedisTestReflect {
 
 	public RedisTestReflect() {
-		Context.loadResource("test/beans.xml");
+		Context.loadResource("test/context.xml");
 		RedisConnection redisConnection = Context.getResource("redisConnectionReflect");
 		RedisExample redisExample = new RedisExample();
 		redisExample.setRedisConnection(redisConnection);

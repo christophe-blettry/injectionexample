@@ -5,7 +5,7 @@
  */
 package io.cb.java.inject.proxy;
 
-import io.cb.java.instrument.bean.Context;
+import io.cb.java.injection.pojo.Context;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 
@@ -16,7 +16,7 @@ import java.lang.reflect.Method;
 public class RedisExampleInvocationHandler implements InvocationHandler {
 
 	static {
-		Context.loadResource("test/beans.xml");
+		Context.loadResource("test/context.xml");
 	}
 	
 	@Override
