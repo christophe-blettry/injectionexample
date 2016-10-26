@@ -48,7 +48,7 @@ In the package `io.cb.java.inject.bytecode` we instantiate the `RedisConnection`
 Each class is proceed by the ClassTransformer.
 We use @Inject and @Named annotation to retreive field that must be initialized during the instanciation of the object.
 If we found @Inject annotation the class will be transformed.
-The bytecode of the class will be transformed by adding in all existing constructor the code of field initialization (see `Transformer` [class](https://github.com/christophe-blettry/injection/blob/master/src/main/java/io/cb/java/injection/Transformer.java)):
+The bytecode of the class will be transformed by adding in all existing constructor the code of field initialization (see `Transformer.class` [\*](https://github.com/christophe-blettry/injection/blob/master/src/main/java/io/cb/java/injection/Transformer.java)):
 
 ```java
     String line = "this." + ctField.getName() + "= (" + ctField.getType().getName() + 
