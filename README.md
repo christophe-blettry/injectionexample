@@ -4,9 +4,9 @@ see the instrumentation before.
 
 [here the examples](https://github.com/christophe-blettry/injectionexample)
 
-With a configuration file [beans.xml](https://github.com/christophe-blettry/injectionexample/blob/master/src/main/resources/test/beans.xml), we will carry out the test of the 3 types of injections.
+With a configuration file [context.xml](https://github.com/christophe-blettry/injectionexample/blob/master/src/main/resources/test/context.xml), we will carry out the test of the 3 types of injections.
 
-The example is to charge 2 beans  `RedisPool` and `RedisConnection` configured in the xml file and view these objects (`toString()`).
+The example is to charge 2 pojos  `RedisPool` and `RedisConnection` configured in the xml file and view these objects (`toString()`).
 `RedisPool` is passed by reference to `RedisConnection`: *`<property name="pool" ref="redisPoolReflect"/>`*.
 
 Each package contains one main file that can be executed.
@@ -48,10 +48,11 @@ In the package `io.cb.java.inject.bytecode` we instantiate the `RedisConnection`
 Each class is proceed by the ClassTransformer.
 We use @Inject and @Named annotation to retreive field that must be initialized during the instanciation of the object.
 If we found @Inject annotation the class will be transformed.
-The bytecode of the class will be transformed by adding in all existing constructor the code of field initialization (see `Transformer` [class](https://github.com/christophe-blettry/injectiontest/blob/master/src/main/java/io/cb/java/instrument/Transformer.java)):
+The bytecode of the class will be transformed by adding in all existing constructor the code of field initialization (see `Transformer` [class](https://github.com/christophe-blettry/injection/blob/master/src/main/java/io/cb/java/injection/Transformer.java)):
 
 ```java
-    String line = "this." + ctField.getName() + "= (" + ctField.getType().getName() + ")io.cb.java.instrument.bean.Context.getResource(\"" + name + "\");";
+    String line = "this." + ctField.getName() + "= (" + ctField.getType().getName() + 
+")"+Context.class.getName()+"."+(singleton ? "getSingleton":"getResource")+"(\"" + name + "\");";
 ```
 
 With this added line of code the class will be "recompile" and outputed by the method.
